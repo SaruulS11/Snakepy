@@ -9,7 +9,7 @@ snake_speed = 15
 window_x = 1200
 window_y = 680
 
-# defining colorsS
+# defining colors
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
