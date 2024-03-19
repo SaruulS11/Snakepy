@@ -103,6 +103,9 @@ while True:
 	
 	# handling key events
 	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+				pygame.quit()
+				quit()
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_w:
 				change_to = 'UP'
