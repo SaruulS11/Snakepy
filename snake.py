@@ -2,12 +2,12 @@
 import pygame
 import time
 import random
-
+from Main import main_menu
 snake_speed = 20
 
 # Window size 1280, 720
 window_x = 1200
-window_y = 680
+window_y = 600
 
 # defining colors
 black = pygame.Color(0, 0, 0)
@@ -20,7 +20,7 @@ blue = pygame.Color(0, 0, 255)
 pygame.init()
 
 # Initialise game window
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('Могой')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -57,7 +57,7 @@ def show_score(choice, color, font, size):
 	
 	# create the display surface object 
 	# score_surface
-	score_surface = score_font.render('Score : ' + str(score), True, color)
+	score_surface = score_font.render('Оноо : ' + str(score), True, color)
 	
 	# create a rectangular object for the text
 	# surface object
@@ -75,7 +75,7 @@ def game_over():
 	# creating a text surface on which text 
 	# will be drawn
 	game_over_surface = my_font.render(
-		'Your Score is : ' + str(score), True, red)
+		'Таны оноо : ' + str(score), True, red)
 	
 	# create a rectangular object for the text 
 	# surface object
@@ -92,10 +92,8 @@ def game_over():
 	time.sleep(2)
 	
 	# deactivating pygame library
-	pygame.quit()
-	
+	main_menu()
 	# quit the program
-	quit()
 
 
 # Main Function
@@ -173,7 +171,7 @@ while True:
 			game_over()
 
 	# displaying score continuously
-	show_score(1, white, 'times new roman', 20)
+	show_score(1, white, 'times new roman', 40)
 
 	# Refresh game screen
 	pygame.display.update()

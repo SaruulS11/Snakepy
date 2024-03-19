@@ -3,7 +3,7 @@ from button import Button
 
 pygame.init()
 
-SCREEN = pygame.display.set_mode((1280, 720))
+SCREEN = pygame.display.set_mode((1280, 620))
 pygame.display.set_caption("Menu")
 
 BG = pygame.image.load("assets/Background.png")
@@ -48,8 +48,9 @@ def options():
 
         SCREEN.fill("white")
 
-        OPTIONS_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
-        OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
+        OPTIONS_TEXT = get_font(45).render("Тоглоомын дүрэм:", True, "Black")
+        OPTIONS_TEXT = get_font(45).render("1.Амархан үе - Могой талбөйн хүрээнээс гадуур\nгарсан үед талбөйн нөгөө тал руу шилжинэ.", True, "Black")
+        OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(140, 260))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(640, 460), 
