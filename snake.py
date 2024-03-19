@@ -3,7 +3,7 @@ import pygame
 import time
 import random
 
-snake_speed = 15
+snake_speed = 20
 
 # Window size 1280, 720
 window_x = 1200
@@ -103,6 +103,9 @@ while True:
 	
 	# handling key events
 	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			pygame.quit()
+			quit()
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_w:
 				change_to = 'UP'
