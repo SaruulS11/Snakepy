@@ -2,8 +2,7 @@
 import pygame
 import time
 import random
-from Main import main_menu
-snake_speed = 20
+snake_speed = 25
 
 # Window size 1280, 720
 window_x = 1200
@@ -33,11 +32,11 @@ snake_position = [100, 50]
 snake_body = [[100, 50],
 			[90, 50],
 			[80, 50],
-			[70, 50]
-			]
-# fruit position
+			[70, 50]]
+# fruit position    
 fruit_position = [random.randrange(1, (window_x//10)) * 10, 
 				random.randrange(1, (window_y//10)) * 10]
+# checking if fruit is in snake body
 
 fruit_spawn = True
 
@@ -48,6 +47,13 @@ change_to = direction
 
 # initial score
 score = 0
+
+def find_empty_position(window_x, window_y, snake_body):
+    while True:
+        x = random.randrange(1, (window_x//10)) * 10
+        y = random.randrange(1, (window_y//10)) * 10
+        if (x, y) not in snake_body:
+            return (x, y)
 
 # displaying Score function
 def show_score(choice, color, font, size):
@@ -92,7 +98,7 @@ def game_over():
 	time.sleep(2)
 	
 	# deactivating pygame library
-	main_menu()
+	from Main import main_menu
 	# quit the program
 
 
@@ -147,8 +153,8 @@ while True:
 		snake_body.pop()
 		
 	if not fruit_spawn:
-		fruit_position = [random.randrange(1, (window_x//10)) * 10, 
-						random.randrange(1, (window_y//10)) * 10]
+		fruit_position = find_empty_position(window_x, window_y, snake_body)
+		
 		
 	fruit_spawn = True
 	game_window.fill(black)

@@ -49,6 +49,14 @@ change_to = direction
 # initial score
 score = 0
 
+
+def find_empty_position(window_x, window_y, snake_body):
+    while True:
+        x = random.randrange(1, (window_x//10)) * 10
+        y = random.randrange(1, (window_y//10)) * 10
+        if (x, y) not in snake_body:
+            return (x, y)
+        
 # displaying Score function
 def show_score(choice, color, font, size):
 
@@ -91,11 +99,7 @@ def game_over():
 	# after 2 seconds we will quit the program
 	time.sleep(2)
 	
-	# deactivating pygame library
-	pygame.quit()
-	
-	# quit the program
-	quit()
+	from Main import main_menu
 
 
 # Main Function
@@ -149,8 +153,7 @@ while True:
 		snake_body.pop()
 		
 	if not fruit_spawn:
-		fruit_position = [random.randrange(1, (window_x//10)) * 10, 
-						random.randrange(1, (window_y//10)) * 10]
+		fruit_position = find_empty_position(window_x, window_y, snake_body)
 		
 	fruit_spawn = True
 	game_window.fill(black)
