@@ -5,9 +5,9 @@ import random
 
 snake_speed = 15
 
-# Window size
-window_x = 720
-window_y = 480
+# Window size 1280, 720
+window_x = 1280
+window_y = 700
 
 # defining colors
 black = pygame.Color(0, 0, 0)
