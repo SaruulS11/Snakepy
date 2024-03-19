@@ -9,7 +9,7 @@ pygame.display.set_caption("Menu")
 BG = pygame.image.load("assets/Background.png")
 
 def get_font(size): # Returns Press-Start-2P in the desired size
-    return pygame.font.Font("assets/font.ttf", size)
+    return pygame.font.Font("assets/tahomaGC.ttf", size)
 
 def play():
     while True:
@@ -18,11 +18,11 @@ def play():
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         EASY_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 250), 
-                            text_input="АМАРХАН", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="АМАРХАН", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
         HARD_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 400), 
-                            text_input="ХЭЦҮҮ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="ХЭЦҮҮ", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
         BACK_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(640, 550), 
-                            text_input="БУЦАХ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="БУЦАХ", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
 
         for button in [EASY_BUTTON, HARD_BUTTON, BACK_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
@@ -78,11 +78,11 @@ def main_menu():
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         PLAY_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 250), 
-                            text_input="ТОГЛОХ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="ТОГЛОХ", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
         OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 400), 
-                            text_input="ТУХАЙ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="ТУХАЙ", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
         QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(640, 550), 
-                            text_input="ГАРАХ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="ГАРАХ", font=get_font(75), base_color="#d7fcd4", hovering_color="Orange")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
